@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأستاذ محمد عبدالوهاب يوسف</title>
+    <style>
+        /* الأساسيات */
+        body {
+            background: linear-gradient(to bottom, #ffcc80, #dfe7ec); /* خلفية ليموني فاتح */
+            font-family: 'Cairo', sans-serif;
+            color: #000;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            background: #00416a;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 5px solid #f4a261;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin: 0;
+            display: inline-block;
+            margin-left: 15px;
+        }
+        .header h2 {
+            font-size: 20px;
+            margin: 10px 0 0 0;
+        }
+
+        /* صورة الأستاذ صغيرة وبعيدة عن النص */
+        .profile-image {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background: url('https://i.postimg.cc/ZBxWmM2T/your-image.png') no-repeat center;
+            background-size: cover;
+        }
+
+        /* مربع الخصم */
+        .discount-banner {
+            background-color: red;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        /* المحتوى */
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #00416a;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f4a261;
+        }
+
+        /* الفوتر */
+        .footer {
+            margin-top: 20px;
+            background-color: #00416a;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* استجابة للهواتف */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header h2 {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 15px;
+                margin: 15px;
+            }
+
+            .discount-banner {
+                font-size: 16px;
+            }
+
+            input, select, textarea, button {
+                font-size: 14px;
+            }
+        }
+
+        /* استجابة للأجهزة الصغيرة جداً مثل الهواتف */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header h2 {
+                font-size: 16px;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .discount-banner {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            input, select, textarea, button {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <div class="header">
+        <div class="profile-image"></div> <!-- صورة الأستاذ -->
+        <h1>الأستاذ محمد عبدالوهاب يوسف</h1>
+        <h2>تطوير ذاتك يبدأ بتعلمك</h2>
+    </div>
+
+    <!-- مربع الخصم -->
+    <div class="discount-banner">
+        خصم 30% بمناسبة رأس السنة! أدخل 5 أرقام من أصدقائك للحصول على الخصم.
+    </div>
+
+    <!-- المحتوى -->
+    <div class="container">
+        <h2>تسجيل الآن في الدروس التعليمية</h2>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="الاسم الثلاثي" required>
+            <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+            <input type="tel" id="parentPhone" placeholder="رقم ولي الأمر" required>
+            <input type="tel" id="studentPhone" placeholder="رقم الطالب (اختياري)">
+            <select id="level" required>
+                <option value="" disabled selected>اختر الصف الدراسي</option>
+                <option value="ثانوي 1">ثانوي 1</option>
+                <option value="ثانوي 2">ثانوي 2</option>
+                <option value="ثانوي 3">ثانوي 3</option>
+            </select>
+            <textarea id="friends" placeholder="أدخل أرقام 5 من أصدقائك للحصول على خصم (مفصولة بفواصل)" rows="3"></textarea>
+            <textarea id="notes" placeholder="ملاحظات أو استفسارات" rows="4"></textarea>
+            <button type="button" onclick="sendToWhatsApp()">📲 إرسال الآن</button>
+        </form>
+    </div>
+
+    <!-- الفوتر مع كلمة المطور -->
+    <div class="footer">
+        جميع الحقوق محفوظة © 2024 - الأستاذ محمد عبدالوهاب يوسف | تطوير: <a href="https://wa.me/+201154773221" style="color: #fff; text-decoration: none;">Lime Glitch</a>
+    </div>
+
+    <!-- إرسال البيانات عبر WhatsApp -->
+    <script>
+        // إرسال البيانات عبر واتساب
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const parentPhone = document.getElementById('parentPhone').value;
+            const studentPhone = document.getElementById('studentPhone').value;
+            const level = document.getElementById('level').value;
+            const friends = document.getElementById('friends').value;
+            const notes = document.getElementById('notes').value;
+
+            // التحقق من ملء البيانات الإلزامية
+            if (name === "" || phone === "" || parentPhone === "") {
+                alert("يرجى ملء جميع الحقول الإلزامية.");
+                return;
+            }
+
+            // إنشاء النص المرسل
+            const message = `مرحبًا، أود التسجيل في الدروس التعليمية.\n\n` +
+                            `الاسم: ${name}\n` +
+                            `رقم الهاتف: ${phone}\n` +
+                            `رقم ولي الأمر: ${parentPhone}\n` +
+                            `رقم الطالب: ${studentPhone}\n` +
+                            `الصف الدراسي: ${level}\n` +
+                            `أرقام الأصدقاء للحصول على خصم: ${friends}\n` +
+                            `ملاحظات أو استفسارات: ${notes}`;
+
+            // رابط واتساب لإرسال البيانات
+            const whatsappNumber = "+201154773221"; // تم إضافة +20 للرقم
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+</body>
+</html>
